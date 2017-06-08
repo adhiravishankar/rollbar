@@ -117,12 +117,11 @@ func init() {
 	}()
 }
 
-// -- Error reporting
-
 func SetClient(c *http.Client) {
 	client = c
 }
 
+// -- Error reporting
 func Errorf(level string, format string, args ...interface{}) {
 	ErrorWithStackSkip(level, fmt.Errorf(format, args...), 1)
 }
